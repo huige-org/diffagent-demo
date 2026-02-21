@@ -1,0 +1,16 @@
+{
+  "name": "diffagent-demo",
+  "version": "1.0.0",
+  "description": "Demonstration repository for DiffAgent GitHub Actions integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "diffagent",
+    "github-actions",
+    "code-review"
+  ],
+  "author": "huige-org",
+  "license": "MIT"
+}

@@ -1,0 +1,57 @@
+diff --git a/src/utils.js b/src/utils.js
+index abc1234..def5678 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -1,5 +1,9 @@
+ function calculateTotal(items) {
+-  return items.reduce((sum, item) => sum + item.price, 0);
++  if (!items || items.length === 0) {
++    return 0;
++  }
++  // TODO: Add input validation
++  return items.reduce((sum, item) => sum + (item.price || 0), 0);
+ }
+ 
+ function formatDate(date) {
+@@ -10,3 +14,8 @@ function formatDate(date) {
+   return date.toISOString().split('T')[0];
+ }
+ 
++function validateEmail(email) {
++  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
++  return regex.test(email);
++}
++
++console.log('Debug info'); // This should be removed in production
+diff --git a/src/utils.py b/src/utils.py
+index 123abc..456def 100644
+--- a/src/utils.py
++++ b/src/utils.py
+@@ -1,3 +1,8 @@
+ def calculate_total(items):
+-    return sum(item['price'] for item in items)
++    if not items or len(items) == 0:
++        return 0
++    # FIXME: Handle missing price field
++    return sum(item.get('price', 0) for item in items)
++
++import os  # Unused import
+diff --git a/src/Calculator.java b/src/Calculator.java
+index 789ghi..012jkl 100644
+--- a/src/Calculator.java
++++ b/src/Calculator.java
+@@ -1,5 +1,13 @@
+ public class Calculator {
+     public int add(int a, int b) {
+         return a + b;
+     }
++    
++    public double divide(double a, double b) {
++        // TODO: Add proper error handling
++        return a / b;
++    }
++    
++    public static void main(String[] args) {
++        System.out.println("Debug output"); // Remove in production
++    }
+ }
